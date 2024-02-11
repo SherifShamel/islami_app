@@ -82,27 +82,27 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
               Divider(
                 color: theme.primaryColor,
               ),
-              if(versesList.isEmpty)
-               Center(
-                 child: CircularProgressIndicator(
-                   color: theme.primaryColor,
-                 ),
-               ),
-              if(versesList.isNotEmpty)
-              Expanded(
-                child: ListView.builder(
-                  itemCount: versesList.length,
-                  itemBuilder: (context, index) => Text(
-                    "${{index+1}} ${versesList[index]}",
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontFamily: "El Messiri",
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20,
-                    ),
+              if (versesList.isEmpty)
+                Center(
+                  child: CircularProgressIndicator(
+                    color: theme.primaryColor,
                   ),
                 ),
-              )
+              if (versesList.isNotEmpty)
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: versesList.length,
+                    itemBuilder: (context, index) => Text(
+                      "${{index + 1}} ${versesList[index]}",
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontFamily: "El Messiri",
+                        fontWeight: FontWeight.normal,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                )
             ],
           ),
         ),

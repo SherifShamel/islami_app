@@ -17,7 +17,7 @@ class LayoutView extends StatefulWidget {
 class _LayoutViewState extends State<LayoutView> {
   List<Widget> screens = [
     QuranView(),
-    const HadethView(),
+    HadethView(),
     const TasbehView(),
     const RadioView(),
     const SettingsView(),

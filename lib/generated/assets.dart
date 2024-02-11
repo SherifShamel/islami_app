@@ -116,11 +116,13 @@ class Assets {
   static const String files97 = 'assets/files/97.txt';
   static const String files98 = 'assets/files/98.txt';
   static const String files99 = 'assets/files/99.txt';
+  static const String filesAhadeth = 'assets/files/ahadeth.txt';
   static const String fontsElMessiriBold = 'assets/fonts/ElMessiri-Bold.ttf';
   static const String fontsElMessiriMedium = 'assets/fonts/ElMessiri-Medium.ttf';
   static const String fontsElMessiriRegular = 'assets/fonts/ElMessiri-Regular.ttf';
   static const String fontsElMessiriSemiBold = 'assets/fonts/ElMessiri-SemiBold.ttf';
   static const String imagesHadeth = 'assets/images/hadeth.png';
+  static const String imagesHadethHeader = 'assets/images/hadeth_header.png';
   static const String imagesMainBackground = 'assets/images/main_background.png';
   static const String imagesQuran = 'assets/images/quran.png';
   static const String imagesQuranHeader = 'assets/images/quran_header.png';
