@@ -131,15 +131,12 @@ class QuranView extends StatelessWidget {
       children: [
         Image.asset(Assets.imagesQuranHeader,
             height: mediaquery.size.height * 0.2),
-        Divider(
-          thickness: 1,
-          color: theme.primaryColor,
-        ),
-        Row(
+        const Divider(),
+        const Row(
           children: [
-            const Expanded(
+            Expanded(
               child: Text(
-                "رقم الصورة",
+                "رقم السورة",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,
@@ -148,14 +145,12 @@ class QuranView extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: 35,
-              width: 1,
-              color: theme.primaryColor,
+            Divider(
+              thickness: 1,
             ),
-            const Expanded(
+            Expanded(
               child: Text(
-                "اسم الصورة",
+                "اسم السورة",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,
@@ -166,9 +161,7 @@ class QuranView extends StatelessWidget {
             ),
           ],
         ),
-        Divider(
-          color: theme.primaryColor,
-        ),
+        const Divider(),
         Expanded(
           child: ListView.builder(
             itemBuilder: (context, index) => GestureDetector(

@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/modules/hadeth/pages/hadeth_view.dart';
+import 'package:provider/provider.dart';
 
+import '../../../config/settings_provider.dart';
 import '../../../generated/assets.dart';
 
 class HadethDetailsView extends StatelessWidget {
   const HadethDetailsView({super.key});
 
   static const String routeName = "hadethDetails";
+
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
+    var vm = Provider.of<SettingsProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as HadethData;
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.imagesMainBackground),
+          image: AssetImage(vm.isDark()
+              ? Assets.imagesMainDarkBackground
+              : Assets.imagesMainBackground),
           fit: BoxFit.cover,
         ),
       ),
@@ -48,7 +54,9 @@ class HadethDetailsView extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: const Color(0xFFF8F8F8).withOpacity(0.8),
+            color: vm.isDark()
+                ? theme.primaryColor
+                : const Color(0xFFF8F8F8).withOpacity(0.8),
           ),
           child: SingleChildScrollView(
             child: Column(

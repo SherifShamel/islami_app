@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/config/application_theme_manager.dart';
+import 'package:islami_app/config/settings_provider.dart';
 import 'package:islami_app/generated/assets.dart';
 import 'package:islami_app/modules/quran/pages/quran_view.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetailsView extends StatefulWidget {
   const QuranDetailsView({super.key});
@@ -18,12 +21,13 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetail;
+    var vm = Provider.of<SettingsProvider>(context)!;
     loadData(args.suraNumber);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.imagesMainBackground),
+          image: AssetImage(vm.changeBackground()),
           fit: BoxFit.cover,
         ),
       ),
@@ -55,7 +59,7 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: const Color(0xFFF8F8F8).withOpacity(0.8),
+            //color: const Color(0xFFF8F8F8).withOpacity(0.8),
           ),
           child: Column(
             children: [
@@ -73,15 +77,16 @@ class _QuranDetailsViewState extends State<QuranDetailsView> {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Icon(
+                  Icon(
                     Icons.play_circle_fill_outlined,
                     size: 28,
+                    color: vm.isDark()
+                        ? ApplicationThemeManager.onPrimaryDarkColor
+                        : Color(0XFFFACC1D),
                   )
                 ],
               ),
-              Divider(
-                color: theme.primaryColor,
-              ),
+              const Divider(),
               if (versesList.isEmpty)
                 Center(
                   child: CircularProgressIndicator(

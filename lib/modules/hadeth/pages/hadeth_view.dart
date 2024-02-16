@@ -5,7 +5,7 @@ import '../../../generated/assets.dart';
 import 'hadeth_details_view.dart';
 
 class HadethView extends StatefulWidget {
-  HadethView({super.key});
+  const HadethView({super.key});
 
   @override
   State<HadethView> createState() => _HadethViewState();
@@ -26,7 +26,6 @@ class _HadethViewState extends State<HadethView> {
           height: mediaQuery.height * 0.2,
         ),
         Divider(
-          color: theme.primaryColor,
           thickness: 1.2,
         ),
         const Text(
@@ -38,7 +37,6 @@ class _HadethViewState extends State<HadethView> {
           ),
         ),
         Divider(
-          color: theme.primaryColor,
           thickness: 1.2,
         ),
         Expanded(

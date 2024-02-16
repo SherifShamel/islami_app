@@ -124,10 +124,14 @@ class Assets {
   static const String imagesHadeth = 'assets/images/hadeth.png';
   static const String imagesHadethHeader = 'assets/images/hadeth_header.png';
   static const String imagesMainBackground = 'assets/images/main_background.png';
+  static const String imagesMainDarkBackground = 'assets/images/main_dark_background.png';
   static const String imagesQuran = 'assets/images/quran.png';
   static const String imagesQuranHeader = 'assets/images/quran_header.png';
   static const String imagesRadio = 'assets/images/radio.png';
+  static const String imagesSebhaBackground = 'assets/images/sebhaBackground.png';
+  static const String imagesSebhaHeader = 'assets/images/sebhaHeader.png';
   static const String imagesSplashBackground = 'assets/images/splash_background.png';
+  static const String imagesSplashDarkBackground = 'assets/images/splash_dark_background.png';
   static const String imagesTasbeh = 'assets/images/tasbeh.png';
 
 }

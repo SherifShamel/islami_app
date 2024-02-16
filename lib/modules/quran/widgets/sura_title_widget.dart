@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/config/application_theme_manager.dart';
 
 class SuraTitleWidget extends StatelessWidget {
   final String suraName;
@@ -27,7 +28,7 @@ class SuraTitleWidget extends StatelessWidget {
         Container(
           height: 35,
           width: 1,
-          color: theme.primaryColor,
+          color: ApplicationThemeManager.onPrimaryDarkColor,
         ),
         Expanded(
           child: Text(
