@@ -10,10 +10,13 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider = SettingsProvider();
+  await provider.loadSettings();
   runApp(
     ChangeNotifierProvider(
-      create: (context) => SettingsProvider(),
+      create: (context) => provider,
       child: const MyApp(),
     ),
   );
@@ -25,7 +28,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var vm = Provider.of<SettingsProvider>(context)!;
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Islami App',

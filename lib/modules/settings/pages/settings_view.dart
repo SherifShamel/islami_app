@@ -55,11 +55,11 @@ class SettingsView extends StatelessWidget {
               expandedFillColor:
                   vm.isDark() ? theme.primaryColor : Colors.white,
             ),
-            onChanged: (value) {
+            onChanged: (value) async {
               if (value == "English") {
-                vm.changeLanguage("en");
+                await vm.changeLanguage("en");
               } else if (value == "عربي") {
-                vm.changeLanguage("ar");
+                await vm.changeLanguage("ar");
               }
             },
           ),

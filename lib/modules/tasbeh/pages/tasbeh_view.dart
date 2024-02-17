@@ -24,71 +24,70 @@ class _TasbehViewState extends State<TasbehView> {
 
     var vm = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
-    var mediaQuery = MediaQuery
-        .of(context)
-        .size;
+    var mediaQuery = MediaQuery.of(context).size;
 
     return Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Stack(
-              children: [
-                Positioned(
-                  bottom: 270,
-                  left: 155,
-                  height: 160,
-                  child: Image.asset(
-                    Assets.imagesSebhaHeader,
-                    color: vm.isDark()
-                        ? ApplicationThemeManager.onPrimaryDarkColor
-                        : theme.primaryColor,
-                  ),
-                ),
-                AnimatedRotation(
-                    turns: turns,
-                    duration: const Duration(milliseconds: 150),
-                    child:
-                    SebhaWidget(mediaQuery: mediaQuery, vm: vm, theme: theme))
-              ],
-            ),
-            Text(lang.tasbehat),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: vm.isDark() ? theme.primaryColor : const Color(
-                      0XFFC8B395),
-                  borderRadius: BorderRadius.circular(15)),
-              child: Text(
-                numberOfTasbyh.toString(),
-                style: TextStyle(
-                  color: vm.isDark() ? Colors.white : Colors.black,
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Stack(
+            children: [
+              Positioned(
+                bottom: 270,
+                left: 155,
+                height: 160,
+                child: Image.asset(
+                  Assets.imagesSebhaHeader,
                   color: vm.isDark()
                       ? ApplicationThemeManager.onPrimaryDarkColor
                       : theme.primaryColor,
-                  borderRadius: BorderRadius.circular(20)),
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    numberOfTasbyh++;
-                    turns += 1 / 16;
-                  });
-                },
-                child: Text(
-                  numberOfTasbyh<30 ? "سبحان الله":"الله أكبر",
-                  style: TextStyle(
-                    color: vm.isDark() ? Colors.black : Colors.white,
-                  ),
+                ),
+              ),
+              AnimatedRotation(
+                  turns: turns,
+                  duration: const Duration(milliseconds: 150),
+                  child:
+                      SebhaWidget(mediaQuery: mediaQuery, vm: vm, theme: theme))
+            ],
+          ),
+          Text(lang.tasbehat),
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color:
+                    vm.isDark() ? theme.primaryColor : const Color(0XFFC8B395),
+                borderRadius: BorderRadius.circular(15)),
+            child: Text(
+              numberOfTasbyh.toString(),
+              style: TextStyle(
+                color: vm.isDark() ? Colors.white : Colors.black,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: vm.isDark()
+                    ? ApplicationThemeManager.onPrimaryDarkColor
+                    : theme.primaryColor,
+                borderRadius: BorderRadius.circular(20)),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  numberOfTasbyh++;
+                  turns += 1 / 16;
+                });
+              },
+              child: Text(
+                numberOfTasbyh < 34 ? "سبحان الله" : "الله أكبر",
+                style: TextStyle(
+                  color: vm.isDark() ? Colors.black : Colors.white,
                 ),
               ),
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
